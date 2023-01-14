@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    
+    "postinstall": "cd client && npm install",
+    "heroku-postbuild": "cd client && npm run heroku-postbuild"
+    
+  },
+  "engines": {
+    "node": "16.*.*",
+    "npm": "7.*.*"
+  },
+  "cacheDirectories": [
+    "client/node_modules",
+    ".cache/Cypress"
+  ],
+  "dependencies": {
+  }
+}
