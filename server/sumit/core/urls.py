@@ -4,12 +4,14 @@ from django.urls import include, path
 from rest_framework_nested import routers
 
 from sumit.core import views as core_views
+from sumit.goals import views as goal_views
 
 router = routers.SimpleRouter()
 if settings.DEBUG:
     router = routers.DefaultRouter()
 
 router.register("users", core_views.UserViewSet)
+router.register("goals", goal_views.GoalViewSet)
 
 urlpatterns = [
     path("api/", include(router.urls)),

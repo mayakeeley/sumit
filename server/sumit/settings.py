@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Local
     "sumit.common",
     "sumit.core",
+    "sumit.goals",
     # Django
     "django.contrib.admin",
     "django.contrib.auth",
@@ -63,7 +64,7 @@ INSTALLED_APPS = [
     "dj_rest_auth",
     "django_filters",
     "django_extensions",
-    ]
+]
 
 
 MIDDLEWARE = [

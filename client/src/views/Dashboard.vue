@@ -1,11 +1,37 @@
 <template>
   <div>
     <h1 class="heading">This is your dashboard</h1>
+    <p v-if="loading"></p>
+    <div v-else>
+      <h2>Goals</h2>
+      <div v-for="goal in goals.list" :key="goal.id">{{ goal.name }}</div>
+    </div>
   </div>
 </template>
 
 <script>
+import Goal from '@/services/goals'
+import { CollectionManager } from '@thinknimble/tn-models'
+import { ref, onBeforeMount, computed } from 'vue'
 export default {
   name: 'Dashboard',
+  setup() {
+    const goals = ref(
+      CollectionManager.create({
+        ModelClass: Goal,
+        filters: {
+          ordering: 'end_date',
+        },
+      }),
+    )
+    const loading = computed(() => goals.value.refreshing)
+    onBeforeMount(async () => {
+      await goals.value.refresh()
+    })
+    return {
+      goals,
+      loading,
+    }
+  },
 }
 </script>
