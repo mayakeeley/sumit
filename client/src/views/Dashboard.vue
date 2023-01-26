@@ -4,14 +4,14 @@
     <p v-if="loading"></p>
     <div v-else>
       <h2>Goals</h2>
-      <div v-for="goal in goals.list" :key="goal.id">
+      <div class="border flex" v-for="goal in goals.list" :key="goal.id">
         <h3>{{ goal.name }}</h3>
-        <p>
+        <p class="mx-2">
           {{ goal.goalType == 'NUMBER' ? goal.currencyRef.symbol : '' }}{{ goal.total
           }}{{ goal.goalType == 'PERCENT' ? '%' : '' }}
           {{ goal.goalFormat == 'MONTHLY' ? '/month' : '' }}
         </p>
-        <p>{{ goal.endDate }}</p>
+        <p>{{ goal.endDate ? goal.endDate : 'N/A' }}</p>
       </div>
     </div>
   </div>
