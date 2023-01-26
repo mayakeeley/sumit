@@ -4,7 +4,15 @@
     <p v-if="loading"></p>
     <div v-else>
       <h2>Goals</h2>
-      <div v-for="goal in goals.list" :key="goal.id">{{ goal.name }}</div>
+      <div v-for="goal in goals.list" :key="goal.id">
+        <h3>{{ goal.name }}</h3>
+        <p>
+          {{ goal.goalType == 'NUMBER' ? goal.currencyRef.symbol : '' }}{{ goal.total
+          }}{{ goal.goalType == 'PERCENT' ? '%' : '' }}
+          {{ goal.goalFormat == 'MONTHLY' ? '/month' : '' }}
+        </p>
+        <p>{{ goal.endDate }}</p>
+      </div>
     </div>
   </div>
 </template>
