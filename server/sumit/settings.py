@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "sumit.common",
     "sumit.core",
     "sumit.goals",
+    "sumit.accounts",
     # Django
     "django.contrib.admin",
     "django.contrib.auth",

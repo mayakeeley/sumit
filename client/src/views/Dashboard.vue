@@ -4,14 +4,28 @@
     <p v-if="loading"></p>
     <div v-else>
       <h2>Goals</h2>
-      <div class="border flex" v-for="goal in goals.list" :key="goal.id">
-        <h3>{{ goal.name }}</h3>
+      <div class="border" v-for="goal in goals.list" :key="goal.id">
+        <h3>{{ goal.name }} - {{ goal.active ? 'Started' : 'Not Started' }}</h3>
         <p class="mx-2">
-          {{ goal.goalType == 'NUMBER' ? goal.currencyRef.symbol : '' }}{{ goal.total
+          {{
+            goal.total.toLocaleString('en-US', {
+              style: 'currency',
+              currency: goal.currencyRef.code,
+            })
           }}{{ goal.goalType == 'PERCENT' ? '%' : '' }}
           {{ goal.goalFormat == 'MONTHLY' ? '/month' : '' }}
         </p>
-        <p>{{ goal.endDate ? goal.endDate : 'N/A' }}</p>
+        <p>{{ goal.endDate ? formatDate(goal.endDate) : 'N/A' }}</p>
+        <p>
+          {{
+            goal.currentBalance.toLocaleString('en-US', {
+              style: 'currency',
+              currency: goal.currencyRef.code,
+            })
+          }}
+        </p>
+        <p>{{ goal.achieved ? 'Y' : 'N' }}</p>
+        <p>{{ goal.progress + '%' }}</p>
       </div>
     </div>
   </div>
@@ -36,9 +50,15 @@ export default {
     onBeforeMount(async () => {
       await goals.value.refresh()
     })
+
+    const formatDate = (date) => {
+      const newDate = new Date(date)
+      return newDate.toLocaleDateString()
+    }
     return {
       goals,
       loading,
+      formatDate,
     }
   },
 }

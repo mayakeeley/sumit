@@ -29,8 +29,11 @@ export default class Goal extends Model {
   static subcategoryRef = new fields.ModelField({ ModelClass: Subcategory })
   static goalType = new fields.CharField()
   static goalFormat = new fields.CharField()
-  static startDate = new fields.CharField()
+  static active = new fields.BooleanField()
   static endDate = new fields.CharField()
   static total = new fields.IntegerField()
   static currencyRef = new fields.ModelField({ ModelClass: Currency })
+  static currentBalance = new fields.IntegerField()
+  static achieved = new fields.BooleanField()
+  static progress = new fields.IntegerField()
 }

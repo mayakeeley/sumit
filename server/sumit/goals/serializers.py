@@ -48,9 +48,12 @@ class GoalSerializer(serializers.ModelSerializer):
             "subcategory_ref",
             "goal_type",
             "goal_format",
-            "start_date",
+            "active",
             "end_date",
             "total",
             "currency",
             "currency_ref",
+            "current_balance",
+            "achieved",
+            "progress",
         )
