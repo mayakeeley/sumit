@@ -1,0 +1,7 @@
+.gutter {
+  margin: 0 1rem;
+
+  @include breakpoint($tablet-landscape) {
+    margin: 0 2.5rem;
+  }
+}

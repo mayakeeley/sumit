@@ -1,18 +1,20 @@
 <template>
   <div class="font-avenir antialiased text-center">
     <nav class="flex justify-center p-7">
-      <router-link to="/" class="router">Home</router-link>
+      <router-link :to="{ name: 'Home' }">Home</router-link>
       <template v-if="isLoggedIn">
         |
-        <router-link to="/dashboard" class="router">Dashboard</router-link>
+        <router-link :to="{ name: 'Dashboard' }">Dashboard</router-link>
         |
-        <span id="logout" class="router underline" @click="logout()">Logout</span>
+        <router-link :to="{ name: 'Cashflow' }">Cashflow</router-link>
+        |
+        <span id="logout" @click="logout()">Logout</span>
       </template>
       <template v-else>
         |
-        <router-link to="/login" data-cy="login" class="router">Login</router-link>
+        <router-link to="/login" data-cy="login">Login</router-link>
         |
-        <router-link to="/signup" class="router">Signup</router-link>
+        <router-link to="/signup">Signup</router-link>
       </template>
     </nav>
     <main>

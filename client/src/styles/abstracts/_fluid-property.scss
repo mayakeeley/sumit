@@ -1,0 +1,28 @@
+/*
+	Props:
+	$property: Any CSS that accepts pixels, ie. Most properties… height/width/padding/font-size etc.
+	$min: The minimum size.
+	$max: The maximum size.
+*/
+
+@mixin fluid-property($property, $min, $max) {
+  @if ($min != $max) {
+    $min-unit: $min + 'px';
+    $max-unit: $max + 'px';
+    $formula: calc(
+      #{$min-unit} + #{$max - $min} * ((100vw - #{$mobile}) / #{$desktop-no-unit - $mobile-no-unit})
+    );
+
+    @media (min-width: #{$mobile}) {
+      #{$property}: $min-unit;
+    }
+
+    @media (max-width: #{$desktop}) {
+      #{$property}: $max-unit;
+    }
+
+    #{$property}: $formula;
+  } @else {
+    #{$property}: $min-unit;
+  }
+}

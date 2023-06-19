@@ -1,0 +1,91 @@
+.display__heavy {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  @include fluid-property('font-size', 24, 36);
+  @include fluid-property('line-height', 32, 48);
+}
+
+.headline__heavy {
+  font-family: 'Avenir Black', sans-serif;
+  font-weight: 900;
+  @include fluid-property('font-size', 20, 24);
+  @include fluid-property('line-height', 28, 32);
+}
+
+.headline__light {
+  font-family: 'Avenir Light', sans-serif;
+  font-weight: 400;
+  @include fluid-property('font-size', 20, 24);
+  @include fluid-property('line-height', 28, 32);
+}
+
+.title__heavy {
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+  @include fluid-property('font-size', 16, 20);
+  @include fluid-property('line-height', 24, 28);
+}
+
+.title__light {
+  font-family: 'Avenir Light', sans-serif;
+  font-weight: 400;
+  @include fluid-property('font-size', 16, 20);
+  @include fluid-property('line-height', 24, 28);
+}
+
+.subheader__heavy {
+  font-family: 'Avenir Black', sans-serif;
+  font-weight: 800;
+  @include fluid-property('font-size', 14, 16);
+  @include fluid-property('line-height', 20, 24);
+}
+
+.subheader__light {
+  font-family: 'Avenir Light', sans-serif;
+  font-weight: 400;
+  @include fluid-property('font-size', 14, 16);
+  @include fluid-property('line-height', 20, 24);
+}
+
+.body__heavy {
+  font-family: 'Avenir Black', sans-serif;
+  font-weight: 800;
+  @include fluid-property('font-size', 12, 14);
+  @include fluid-property('line-height', 16, 20);
+}
+
+.body__light {
+  font-family: 'Avenir Light', sans-serif;
+  font-weight: 400;
+  @include fluid-property('font-size', 12, 14);
+  @include fluid-property('line-height', 16, 20);
+}
+
+.caption__light {
+  font-family: 'Avenir Light', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.caption__heavy {
+  font-family: 'Avenir Black', sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.small__light {
+  font-family: 'Avenir Light', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.heading--accent3 {
+  color: $accent3;
+}
+
+.heading--light {
+  color: $white;
+}

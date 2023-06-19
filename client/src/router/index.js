@@ -39,6 +39,18 @@ const routes = [
     component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
   },
   {
+    path: '/dashboard',
+    name: 'Dashboard',
+    beforeEnter: requireAuth,
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
+  },
+  {
+    path: '/cashflow',
+    name: 'Cashflow',
+    beforeEnter: requireAuth,
+    component: () => import(/* webpackChunkName: "cashflow" */ '../views/Cashflow.vue'),
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'PageNotFound',
     component: () => import('../views/PageNotFound.vue'),

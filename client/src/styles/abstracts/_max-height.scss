@@ -1,0 +1,12 @@
+@mixin max-height($navHeight: 3.125rem) {
+  max-height: calc(100vh - #{$navHeight});
+}
+
+@mixin max-height-important($navHeight: 3.125rem) {
+  max-height: calc(100vh - #{$navHeight}) !important;
+}
+
+@mixin min-height($navHeight: 3.125rem) {
+  min-height: calc(100vh - #{$navHeight});
+}
+
